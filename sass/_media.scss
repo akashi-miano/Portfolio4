@@ -1,0 +1,184 @@
+// tablet xl
+
+@include media(62.5em) {
+
+	html {
+		font-size: 70%;
+	}
+
+	// hero
+
+	.hero  {
+		&__content-wrapper {
+			grid-template-columns: 1fr;
+			justify-items: center;
+			@include p-y(10rem);
+		}
+
+		&__content {
+			display: grid; 
+			text-align: center;
+			justify-items: center;
+
+			h1 {
+				margin: 0 !important;
+			}
+
+			p  {
+				max-width: 350px;
+				margin: .5rem auto;
+				margin-bottom: .5rem !important;
+			}
+		}
+
+
+		&__img-wrapper {
+			width: 50%;
+		}
+	}
+
+	// about
+
+	.about  {
+		&__grid {
+			grid-template-columns: 1fr;
+		}
+
+	}
+
+
+	// skills
+
+	.skills {
+		&__content {
+			grid-template-columns: 1fr 1fr;
+
+			img  {
+				max-width: 150px !important;
+			}
+
+			figcaption {
+				font-size: 2rem !important;
+			}
+		}
+	}
+
+	// blogs
+
+	.blogs  {
+		&__content {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+}
+
+// tablet (s);
+
+@include media(45em) {
+
+	// my-work
+
+	.my-work {
+		&__content {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	// contact
+
+	.contact{
+
+		&__content-wrapper ,
+		&__form {
+			grid-template-columns: 1fr !important;
+		}
+	}
+}
+
+
+// mobile
+@include media(35em) {
+	html  {
+		font-size: 62.5%;
+	}
+
+	// hero
+
+	.hero  {
+		
+		&__title{
+			text-align: center !important;
+		}
+
+		&__list {
+			span  {
+				display: none;
+			}
+		}
+	}
+
+	// about
+	.about {
+		&__achievements,
+		&__personal-info {
+			grid-template-columns: 1fr;
+		}
+
+		&__personal-info {
+			justify-items: center;
+		}
+	}
+
+	// skills
+
+	.skills {
+		&__content {
+			grid-template-columns: 1fr;
+		}
+		}
+
+	// education
+
+	.education  {
+		&__content {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	// my-work
+
+	.my-work {
+		&__content {
+			grid-template-columns: 1fr; 
+		}
+	}
+
+
+	// blogs
+
+	.blogs  {
+		&__content {
+			grid-template-columns: 1fr; 
+			
+		}
+	}
+
+	//contact
+
+	.contact {
+		&__title {
+			font-size: 4rem !important;
+		}
+
+		.social-icons__list {
+			margin: 2rem 0 ;
+		}
+
+		&__form {
+			textarea {
+				margin-top: .5rem;
+			}
+		}
+	}
+}

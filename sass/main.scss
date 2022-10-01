@@ -1,0 +1,487 @@
+@import 'config';
+@import 'media';
+
+
+.hero {
+	
+	&__content-wrapper{
+		@include abs-center;
+		gap: 2.5rem;
+		align-items: center;
+		color: #fff;
+	}
+
+	&__img  {
+		width: 100%;
+		border-radius: 30% 70% 57% 43% / 30% 30% 70% 70% ;
+	}
+
+	&__content {
+		 h1  {
+			@include title(3rem);
+			text-align: left;
+		 }
+	}
+
+	&__sub-title {
+		@include sub-title(2rem);
+		line-height: 1.1;
+	}
+
+	&__desc {
+		color: darken(#fff, 20%);
+	}
+
+	&__nav {
+		position: fixed;
+		z-index: 1000;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+
+		ul  {
+			display: flex;
+			justify-content: space-around;
+			align-items: flex-end;
+
+			li  {
+				flex: 1;
+				background: $dark-bg-secondary;
+				padding: 1.5rem;
+				transition: 500ms;
+				display: flex;
+				gap:1.125rem;
+				align-items: center;
+
+
+				&:hover {
+					padding-bottom: 3rem;
+					background: $primary-clr;
+
+					&  * {color: #fff;}
+				}
+
+			}
+
+			a {
+				display: inline-block;
+				flex: 1;
+				display: flex;
+				align-items: center;
+				gap: 1.5rem;
+
+				i  {
+					color: $primary-clr;
+				}
+				color: #fff;
+				font-size: 1.3rem;
+			}
+		}
+	}
+}
+
+// about
+
+.about {
+	color: #fff;
+	padding: 3rem 1rem;
+
+	&__title {
+		@include title(4.5rem);
+		color: #fff;
+	}
+
+	&__sub-title {
+		@include title(2rem);
+		text-align: left;
+		margin: 0;
+	}
+
+	&__special-word {
+		color: lighten(#333, 40%);
+		margin-right: .5rem;
+	}
+
+	&__achievements {
+		gap: 1.5rem;
+	}
+
+	&__card {
+		background: $dark-bg-secondary;
+		padding: 2rem;
+		transition: 250ms;
+
+		p:first-child {
+			color: $primary-clr;
+			font-size: 3rem;
+			font-weight: 700;
+		}
+
+		p:last-child {
+			font-size: 1.125rem;
+		}
+
+	}
+
+	&__personal-info {
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	&__grid {
+		align-items: center;
+		width: 100%;
+		gap: 2.25rem;
+	}
+
+
+}
+
+// skills
+
+.skills {
+	color: #fff;
+	@include p-y(5rem);
+
+	&__title {
+		@include title(4.5rem);
+	}
+	&__content {
+			gap: 1.125rem;
+	}
+	&__card {
+		padding: 2rem;
+		background: $dark-bg-secondary;
+		margin-bottom: 5rem;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 250ms;
+
+		img  {
+			width: 100%;
+		}
+		figcaption {
+			text-transform: uppercase;
+			font-size: 1.125rem;
+		}
+
+		&:hover {
+			background: #fff;
+			color: #000;
+		}
+	}
+	&__img {
+		width: 100%;
+	}
+
+}
+
+// education
+
+.education {
+	color: #fff;
+
+	&__title {
+		@include title(4.5rem);
+	}
+
+	&__tag {
+		@include tag;
+	}
+
+	&__content {
+		column-gap: 2.25rem;
+		padding-bottom: 10rem;
+	}
+
+	&__card {
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 3px;
+			height: 100%;
+			background: #fff;
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+		}
+
+		padding-left: 3rem;
+
+		&-title {
+			font-size: 1.3rem;
+		}
+
+		&-desc {
+			font-size: 1.1rem;
+			color: darken(#fff, 20%);
+			margin-bottom: 1.5rem;
+		}
+
+		&-icon {
+			display: inline-block;
+			background: $primary-clr;
+			color: #fff;
+			padding: .5em;
+			border-radius: 50%;
+			font-size: 1.5rem;
+			position: absolute;
+			left: -1.5rem;
+			z-index: 1;
+		}
+
+	}
+
+}
+
+
+// mywork
+
+.my-work{
+
+	margin-bottom: 10rem;
+	&__title {
+		@include title(4.5rem);
+		color: #fff;
+	}
+	&__content {
+		gap: 1.125rem;
+	}
+	&__img-wrapper {
+		position: relative;
+
+		&:hover .my-work__card{
+			height: 100%;
+		}
+	}
+	&__img {
+		width: 100%;
+	}
+	&__card {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		height: 0;
+		padding: 0 !important;
+		overflow: hidden;
+		background: $dark-bg-secondary;
+		text-align: center;
+		color: #fff;
+		padding: 1.5rem;
+		transition: 500ms ;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+
+		a  {
+			padding: 0;
+			color: $primary-clr;
+		}
+
+	}
+
+	&__btn-wrapper {
+		grid-column: 1/-1;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+}
+
+// blogs
+
+
+.blogs {
+
+	margin-bottom: 10rem;
+	
+	&__title {
+		@include title(4.5rem);
+		color: #fff;
+	}
+
+	&__content {
+		gap: 1.125rem;
+	}
+
+	&__card {
+		position: relative;
+		background: $dark-bg-secondary;
+		padding: 2rem;
+		border-radius: 9px;
+		
+		color: #fff;
+		&-img {
+			width: 100%;
+			border-radius: 9px;
+			transition: 250ms;
+
+			&:hover {
+				transform:  scale(1.1);
+			}
+		}
+
+		&-info-card {
+			display: flex;
+			align-items: center;
+			width: 85%;
+			justify-content: space-between;
+			font-size: .8rem;
+			background: #000;
+			padding: .7rem 1.4rem;
+			margin: 0;
+			transform:  translate(1.5rem,-1.5rem);
+
+			p  {
+				display: flex;
+				align-items: center;
+				gap: .5rem;
+				transition: 250ms;
+
+				&:hover {
+					cursor: pointer;
+					color: $primary-clr;
+				}
+			}
+		}
+	}
+
+	&__btn-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+
+// contact
+
+.contact {
+	margin-bottom: 10rem;
+
+	&__content-wrapper {
+		grid-template-columns: 1.5fr 3fr;
+		gap: 1rem;
+
+	}
+
+	&__title {
+		@include title(4.5rem);
+		color: #fff;
+	}
+
+	&__content {
+		
+		&-title {
+			@include sub-title(2rem);
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		&-desc {
+			color: darken(#fff, 15%);
+		}
+
+	}
+
+	&__info-wrapper {
+		color: #fff;
+		display: flex;
+		gap: 2.5rem;
+		align-items: center;
+
+		i  {
+			color: $primary-clr;
+			font-size: 2rem;
+		}
+
+	}
+		&__info-desc {
+			color: darken(#fff, 15%);
+		}
+
+	&__desc {
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+
+	&__form {
+		align-items: center;
+
+		input {
+			border: 0;
+			display: block;
+			width: 100%;
+			background: $dark-bg-secondary;
+			padding: .5rem 1.5rem;
+			margin-bottom: 1rem;
+			border-radius: 100px;
+			font: inherit;
+			color: #fff;
+
+
+			&::placeholder {
+				color: darken(#fff, 25%);
+			}
+		}
+	}
+		
+		&__input-wrapper {
+			margin-right: 1.5rem;
+		}
+
+		&__input-wrapper:last-child {
+			grid-column: 1/-1;
+
+			textarea {
+				width: 100%;
+				background: $dark-bg-secondary;
+				border: 0;
+				padding: .5rem 1.5rem;
+				font: inherit;
+				resize: vertical;
+				min-height: 270px;
+				max-height: 300px;
+				color: #fff;
+
+				&::placeholder {
+					color: darken(#fff, 25%);
+				}
+			}
+
+		}
+
+
+}
+		.social-icons {
+			
+			&__list {
+				display: flex;
+				gap: .5rem;
+
+				a  {
+					display: inline-block;
+					color: #fff;
+					font-size: 1.5rem;
+					background: $dark-bg-secondary;
+					padding: .5rem 1rem;
+					border-radius: 50%;
+					transition: 250ms;
+
+					&:hover,
+					&:focus {
+						background: $primary-clr;
+					}
+				}
+			}
+		}
